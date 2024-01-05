@@ -8,28 +8,28 @@ enum layers {DFLT_LYR, MOUS_LYR, NMBR_LYR, GAME_LYR};
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [DFLT_LYR] = LAYOUT_split_3x5_2( // LETTERS, SYMBOLS, SPACE, BACKSPACE, DELETE, COMBO REFERENCE
-        KC_W,    KC_C,    KC_H,    KC_Q,    KC_Z,            KC_X,    KC_Y,    KC_K,    KC_F,    KC_P,
-        KC_N,    KC_S,    KC_R,    KC_T,    KC_COMM,         KC_DOT,  KC_E,    KC_I,    KC_A,    KC_O,
-        KC_M,    KC_J,    KC_L,    KC_D,    KC_SLSH,         KC_BSLS, KC_U,    KC_G,    KC_V,    KC_B,
+        KC_W,    KC_C,    KC_H,    KC_Q,    KC_Z,            KC_X,         KC_Y,    KC_K,    KC_F,    KC_P,
+        KC_N,    KC_S,    KC_R,    KC_T,    KC_COMM,         KC_DOT,       KC_E,    KC_I,    KC_A,    KC_O,
+        KC_M,    KC_J,    KC_L,    KC_D,    KC_SLSH,         KC_BSLS,      KC_U,    KC_G,    KC_V,    KC_B,
                                                KC_BSPC, KC_SPC,          MO(NMBR_LYR), KC_DEL),
 
     [MOUS_LYR] = LAYOUT_split_3x5_2( // MOUSE, ARROWS, FUNCTIONS
-        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-        KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT, KC_F11,          KC_F12,  KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
-        KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,         KC_TRNS, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
-                                               KC_TRNS, MO(NMBR_LYR),    KC_BTN1, KC_BTN2),
+        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,           KC_F6,        KC_F7,   KC_F8,   KC_F9,   KC_F10,
+        KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT, KC_F11,          KC_F12,       KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+        KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,         KC_TRNS,      KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+                                               KC_TRNS, MO(NMBR_LYR),    KC_BTN1,      KC_BTN2),
 
     [NMBR_LYR] = LAYOUT_split_3x5_2( // NUMBERS, SYMBOLS, ARROWS
-        KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-        KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_TRNS,         KC_TRNS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-        KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_TRNS,         KC_TRNS, KC_LPRN, KC_WH_D, KC_WH_U, KC_RPRN,
-                                               KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS),
+        KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            KC_6,         KC_7,    KC_8,    KC_9,    KC_0,
+        KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_TRNS,         KC_TRNS,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+        KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_TRNS,         KC_TRNS,      KC_LPRN, KC_WH_D, KC_WH_U, KC_RPRN,
+                                               KC_TRNS, KC_TRNS,         KC_TRNS,      KC_TRNS),
 
     [GAME_LYR] = LAYOUT_split_3x5_2( // NO MODS ALLOWED
-        KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-        KC_A,    KC_W,    KC_S,    KC_D,    KC_F,            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-                                               KC_1,    KC_L,            KC_R,    KC_2)
+        KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            KC_6,         KC_7,    KC_8,    KC_9,    KC_0,
+        KC_A,    KC_W,    KC_S,    KC_D,    KC_F,            KC_Y,         KC_U,    KC_I,    KC_O,    KC_P,
+        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            KC_N,         KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+                                               KC_K,    KC_L,            KC_R,         KC_T)
 };
 
 enum combos {                        // MODS, SYMBOLS, LAYERS
@@ -86,7 +86,7 @@ const uint16_t PROGMEM psc_combo[]   = {KC_BSLS, KC_B,    COMBO_END};
 
 combo_t key_combos[] = {
   //                     oxxoo                                            ooxxo
-  [TAB_CMB_1] = COMBO(tab_combo_1, KC_CAPS),      [TAB_CMB_2] = COMBO(tab_combo_2, KC_TAB),
+  [TAB_CMB_1] = COMBO(tab_combo_1, KC_TAB),       [TAB_CMB_2] = COMBO(tab_combo_2, KC_TAB),
   [SFT_CMB_1] = COMBO(sft_combo_1, KC_LSFT),      [SFT_CMB_2] = COMBO(sft_combo_2, KC_RSFT),
   [MSE_CMB_M] = COMBO(mse_combo_m, MO(MOUS_LYR)), [DFT_CMB]   = COMBO(dft_combo,   TO(DFLT_LYR)),
   //                     xooxo                                            oxoox
