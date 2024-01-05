@@ -8,7 +8,7 @@ gamelayer
 mouselayer
 tab
 shift
-capslock
+momentary_mouselayer
 defaultlayer
 / ?
 \ |
