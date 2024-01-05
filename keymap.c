@@ -10,7 +10,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DFLT_LYR] = LAYOUT_split_3x5_2( // LETTERS, SYMBOLS, SPACE, BACKSPACE, DELETE, COMBO REFERENCE
         KC_W,    KC_C,    KC_H,    KC_Q,    KC_Z,            KC_X,         KC_Y,    KC_K,    KC_F,    KC_P,
         KC_N,    KC_S,    KC_R,    KC_T,    KC_COMM,         KC_DOT,       KC_E,    KC_I,    KC_A,    KC_O,
-        KC_M,    KC_J,    KC_L,    KC_D,    KC_SLSH,         KC_BSLS,      KC_U,    KC_G,    KC_V,    KC_B,
+        KC_M,    KC_J,    KC_L,    KC_D,    KC_MINS,         KC_EQL,      KC_U,    KC_G,    KC_V,    KC_B,
                                                KC_BSPC, KC_SPC,          MO(NMBR_LYR), KC_DEL),
 
     [MOUS_LYR] = LAYOUT_split_3x5_2( // MOUSE, ARROWS, FUNCTIONS
@@ -42,11 +42,11 @@ enum combos {                        // MODS, SYMBOLS, LAYERS
   CTL_CMB_1, CTL_CMB_2,
   GME_CMB,   MSE_CMB,
 // oooxx      xxooo
-  LBR_CMB,   RBR_CMB,
+  SLS_CMB,   BSL_CMB,
   ESC_CMB,   ENT_CMB,
   OSG_CMB_1, OSG_CMB_2,
 // xooox      xooox
-  MIN_CMB,   EQL_CMB,
+  LBR_CMB,   RBR_CMB,
   QTE_CMB,   SCL_CMB,
   GRV_CMB,   PSC_CMB,
 };
@@ -68,21 +68,21 @@ const uint16_t PROGMEM alt_combo_2[] = {KC_Y,    KC_P,    COMBO_END};
 const uint16_t PROGMEM ctl_combo_2[] = {KC_E,    KC_O,    COMBO_END};
 const uint16_t PROGMEM mse_combo[]   = {KC_U,    KC_B,    COMBO_END};
 // oooxx (left hand)
-const uint16_t PROGMEM lbr_combo[]   = {KC_Q,    KC_Z,    COMBO_END};
+const uint16_t PROGMEM sls_combo[]   = {KC_Q,    KC_Z,    COMBO_END};
 const uint16_t PROGMEM esc_combo[]   = {KC_T,    KC_COMM, COMBO_END};
-const uint16_t PROGMEM osg_combo_1[] = {KC_D,    KC_SLSH, COMBO_END};
+const uint16_t PROGMEM osg_combo_1[] = {KC_D,    KC_MINS, COMBO_END};
 // xxooo (right hand)
-const uint16_t PROGMEM rbr_combo[]   = {KC_X,    KC_Y,    COMBO_END};
+const uint16_t PROGMEM bsl_combo[]   = {KC_X,    KC_Y,    COMBO_END};
 const uint16_t PROGMEM ent_combo[]   = {KC_DOT,  KC_E,    COMBO_END};
-const uint16_t PROGMEM osg_combo_2[] = {KC_BSLS, KC_U,    COMBO_END};
+const uint16_t PROGMEM osg_combo_2[] = {KC_EQL,  KC_U,    COMBO_END};
 // xooox (left hand)
-const uint16_t PROGMEM min_combo[]   = {KC_W,    KC_Z,    COMBO_END};
+const uint16_t PROGMEM lbr_combo[]   = {KC_W,    KC_Z,    COMBO_END};
 const uint16_t PROGMEM qte_combo[]   = {KC_N,    KC_COMM, COMBO_END};
-const uint16_t PROGMEM grv_combo[]   = {KC_M,    KC_SLSH, COMBO_END};
+const uint16_t PROGMEM grv_combo[]   = {KC_M,    KC_MINS, COMBO_END};
 // xooox (right hand)
-const uint16_t PROGMEM eql_combo[]   = {KC_X,    KC_P,    COMBO_END};
+const uint16_t PROGMEM rbr_combo[]   = {KC_X,    KC_P,    COMBO_END};
 const uint16_t PROGMEM scl_combo[]   = {KC_DOT,  KC_O,    COMBO_END};
-const uint16_t PROGMEM psc_combo[]   = {KC_BSLS, KC_B,    COMBO_END};
+const uint16_t PROGMEM psc_combo[]   = {KC_EQL,  KC_B,    COMBO_END};
 
 combo_t key_combos[] = {
   //                     oxxoo                                            ooxxo
@@ -94,11 +94,11 @@ combo_t key_combos[] = {
   [CTL_CMB_1] = COMBO(ctl_combo_1, KC_LCTL),      [CTL_CMB_2] = COMBO(ctl_combo_2, KC_RCTL),
   [GME_CMB]   = COMBO(gme_combo,   TO(GAME_LYR)), [MSE_CMB]   = COMBO(mse_combo,   TO(MOUS_LYR)),
   //                     oooxx                                            xxooo
-  [LBR_CMB]   = COMBO(lbr_combo,   KC_LBRC),      [RBR_CMB]   = COMBO(rbr_combo,   KC_RBRC),
+  [SLS_CMB]   = COMBO(sls_combo,   KC_SLSH),      [BSL_CMB]   = COMBO(bsl_combo,   KC_BSLS),
   [ESC_CMB]   = COMBO(esc_combo,   KC_ESC),       [ENT_CMB]   = COMBO(ent_combo,   KC_ENT),
   [OSG_CMB_1] = COMBO(osg_combo_1, KC_LGUI),      [OSG_CMB_2] = COMBO(osg_combo_2, KC_RGUI),
   //                     xooox                                            xooox
-  [MIN_CMB]   = COMBO(min_combo,   KC_MINUS),     [EQL_CMB]   = COMBO(eql_combo,   KC_EQL),
+  [LBR_CMB]   = COMBO(lbr_combo,   KC_LBRC),      [RBR_CMB]   = COMBO(rbr_combo,   KC_RBRC),
   [QTE_CMB]   = COMBO(qte_combo,   KC_QUOTE),     [SCL_CMB]   = COMBO(scl_combo,   KC_SCLN),
   [GRV_CMB]   = COMBO(grv_combo,   KC_GRV),       [PSC_CMB]   = COMBO(psc_combo,   KC_PRINT_SCREEN),
 };
