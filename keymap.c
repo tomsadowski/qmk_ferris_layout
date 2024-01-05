@@ -117,7 +117,7 @@ bool combo_should_trigger(uint16_t     combo_index,
               return false;
 
     if (layer_state_is(MOUS_LYR))
-        if (combo_index != MSE_CMB_M)
+        if (combo_index == MSE_CMB_M)
               return false;
 
     return true;
