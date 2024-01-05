@@ -10,12 +10,13 @@ tab
 shift
 capslock
 defaultlayer
-[ {
-] }
+/ ?
+\ |
 esc
 enter
 osgui
-- _
+[ {
+] }
 = +
 ' "
 ; :
