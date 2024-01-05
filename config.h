@@ -26,4 +26,6 @@
 // combo shapes should make it easy to hit keys at the same time,
 // a narrow activation window minimizes accidental triggering
 #define COMBO_STRICT_TIMER
-#define COMBO_TERM 38
+#define COMBO_TERM 45
+
+#define BOTH_SHIFTS_TURN_ON_CAPS_WORD
